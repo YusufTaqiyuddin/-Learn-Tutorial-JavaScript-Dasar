@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    
+    <script>
+
+        // Arrow Function
+        const sayHello = (name) =>{
+            const say = `Hello ${name}`;
+            console.info(say);
+        }
+
+        sayHello("Yusuf Taqiyuddin");
+
+
+        // Arrow Function tanpa block
+        const greet = (name) => console.info(`Hello ${name}`);
+
+        greet("Ucup Udin");
+
+
+        // Arrow Function return value
+        const sum = (num1, num2) => num1 + num2;
+
+        console.info(sum(20 + 13));
+
+
+        // Arrow function sebagai parameter
+        function giveMeName(callback){
+            callback("Yusuf");
+        }
+
+        giveMeName((name) => console.info(`Hello ${name}`));
+
+    </script>
+</body>
+</html>

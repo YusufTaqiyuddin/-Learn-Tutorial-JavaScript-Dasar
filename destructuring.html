@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+
+        // Destructuring
+        const buah = ["Apel", "Jeruk", "Nanas", "Semangka", "Alpukat"];
+        const [apel, jeruk, nanas, ...others] = buah;
+
+        console.info(apel); // Apel
+        console.info(jeruk); // Jeruk
+        console.info(nanas); // Nanas
+        console.info(others); // ['Semangka', 'Alpukat']
+
+        // Destructuring Object
+        const person = {
+            firstName: "Yusuf",
+            lastName: "Taqiyuddin",
+            address: {
+                street: "Jalan jalan",
+                city: "Semarang",
+                country: "Indonesia"
+            }, 
+            hobby: "Rebahan",
+            channel: "ucupudin"
+        };
+
+        let {firstName, lastName, address: {street, city}, ...lainya} = person;
+
+        console.info(firstName); // Yusuf
+        console.info(street); // Jalan jalan
+        console.info(address); // {street: "Jalan jalan", city: "Semarang", country: "Indonesia"}
+        console.info(lainya); // {hobby: "Rebahan", channel: "ucupudin"}
+
+
+        // Destructuring di function parameter
+        function displayPerson({nama, usia}){
+            console.info(nama); // Ucupudin
+            console.info(usia); // 20
+        }
+
+        const orang = {
+            nama: "Ucupudin",
+            usia: 20
+        };
+
+        displayPerson(orang);
+        
+
+        // Destruction di function parameter
+        function sum([first, second]){
+            return first + second;
+        }
+
+        console.info(sum[10, 20]); // 30
+
+
+        // Default value destructuring array
+        const names = ["Yusuf", "Taqiyuddin"];
+        const [namaAwal, namaTengah, namaAkhir = "Udin"] = names;
+
+        console.info(namaAwal); // Yusuf
+        console.info(namaAkhir); // Udin
+        
+    </script>
+</body>
+</html>
